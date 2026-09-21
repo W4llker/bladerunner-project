@@ -1,18 +1,18 @@
 ---
 name: 📚 Documentation
-about: Mejorar o añadir documentación
+about: Improve or add documentation
 title: "[DOCS] "
 labels: ["documentation", "triage"]
 ---
 
-## ¿Qué documentación falta o está mal?
+## What documentation is missing or wrong?
 
-<!-- Ruta del archivo o sección. -->
+<!-- File path or section. -->
 
-## ¿Qué debería decir?
+## What should it say?
 
-<!-- Descripción del contenido correcto. -->
+<!-- Description of the correct content. -->
 
-## Contexto
+## Context
 
-<!-- Por qué importa, quién lo necesita. -->
+<!-- Why it matters, who needs it. -->

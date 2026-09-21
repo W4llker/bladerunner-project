@@ -1,11 +1,12 @@
-# Cómo extender Bladerunner
+# How to extend Bladerunner
 
-## Reglas
+## Rules
 
-1. Heredar de clase base en `core/`.
-2. Archivo `snake_case` con sufijo `_sensor.py`, `_detector.py` o `_actuator.py`.
-3. Test en `tests/`.
-4. Documentar en `docs/architecture.md`.
+1. Inherit from the base class in `core/`.
+2. `snake_case` file with the suffix `_sensor.py`, `_detector.py`, or
+   `_actuator.py`.
+3. A test in `tests/`.
+4. Document it in `docs/architecture.md`.
 
 ## Sensor
 
@@ -36,14 +37,14 @@ class MyDetector(BaseDetector):
     name = "my_detector"
 
     def evaluate(self, event: Event) -> Verdict:
-        if <condición>:
+        if <condition>:
             return Verdict(event=event, detector=self.name,
                            is_anomalous=True, severity=Severity.MEDIUM,
                            reason="...", score=1.0)
         return Verdict(event=event, detector=self.name, is_anomalous=False)
 ```
 
-## Actuador
+## Actuator
 
 ```python
 from bladerunner.core.actuator import BaseActuator
@@ -54,25 +55,25 @@ class MyActuator(BaseActuator):
 
     def execute(self, action: Action) -> Action:
         try:
-            # lógica
+            # logic
             action.executed = True
-            action.result = "resultado"
+            action.result = "result"
         except Exception as e:
             action.result = f"error: {e}"
         return action
 ```
 
-## Registro en CLI
+## CLI registration
 
-Añadir a la lista correspondiente en `cli.py::watch`.
+Add it to the corresponding list in `cli.py::watch`.
 
 ## Checklist
 
-- [ ] Carpeta correcta, sufijo correcto.
-- [ ] Hereda de clase base.
-- [ ] `name` único.
-- [ ] Maneja errores sin propagar excepciones.
-- [ ] Test unitario.
-- [ ] Registrado en cli.py si aplica.
-- [ ] Documentado.
-- [ ] `ruff check .` y `pytest -v` pasan.
+- [ ] Correct folder, correct suffix.
+- [ ] Inherits from the base class.
+- [ ] Unique `name`.
+- [ ] Handles errors without propagating exceptions.
+- [ ] Unit test.
+- [ ] Registered in cli.py if applicable.
+- [ ] Documented.
+- [ ] `ruff check .` and `pytest -v` pass.

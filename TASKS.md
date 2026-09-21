@@ -1,214 +1,214 @@
-# TASKS.md — Backlog vivo de Bladerunner
+# TASKS.md — Bladerunner live backlog
 
-> **Instrucciones para el agente IA:** este es tu backlog. Al inicio de cada
-> sesión, busca la sección **"🎯 Tarea actual"** y trabaja en ella. Al
-> terminarla, muévela a **"✅ Completadas"** y promueve la siguiente de
-> **"📋 Pendientes"** a **"🎯 Tarea actual"**.
+> **Instructions for the AI agent:** this is your backlog. At the start of
+> each session, find the **"🎯 Current task"** section and work on it. When
+> you finish it, move it to **"✅ Completed"** and promote the next one from
+> **"📋 Pending"** to **"🎯 Current task"**.
 >
-> Formato de cada tarea:
+> Format for each task:
 > ```
-> ### [TASK-NNN] Título corto
-> - **Tipo:** feature | bugfix | docs | refactor | test | chore | security
+> ### [TASK-NNN] Short title
+> - **Type:** feature | bugfix | docs | refactor | test | chore | security
 > - **Milestone:** v0.2 | v0.3 | ...
-> - **Prioridad:** alta | media | baja
-> - **Esfuerzo:** S (horas) | M (días) | L (semanas)
-> - **Depende de:** [TASK-XXX] (opcional)
-> - **Descripción:** qué hay que hacer.
-> - **Criterios de aceptación:** lista verificable.
-> - **Documentos a actualizar:** CHANGELOG.md, docs/X.md, etc.
+> - **Priority:** high | medium | low
+> - **Effort:** S (hours) | M (days) | L (weeks)
+> - **Depends on:** [TASK-XXX] (optional)
+> - **Description:** what needs to be done.
+> - **Acceptance criteria:** a verifiable list.
+> - **Documents to update:** CHANGELOG.md, docs/X.md, etc.
 > ```
 
 ---
 
-## 🎯 Tarea actual
+## 🎯 Current task
 
-### [TASK-001] Sensor de red (network_sensor.py)
-- **Tipo:** feature
+### [TASK-001] Network sensor (network_sensor.py)
+- **Type:** feature
 - **Milestone:** v0.2
-- **Prioridad:** alta
-- **Esfuerzo:** M
-- **Depende de:** —
-- **Descripción:** crear `src/bladerunner/sensors/network_sensor.py` que
-  monitorice las conexiones de red salientes de un proceso y emita `Event`s
-  con dominios/IPs visitadas, puertos y volumen de tráfico.
-- **Criterios de aceptación:**
-  - [ ] Archivo creado en la ruta correcta.
-  - [ ] Hereda de `BaseSensor`.
-  - [ ] Tiene `name = "network_sensor"`.
-  - [ ] Emite eventos con `kind=EventKind.NETWORK`.
-  - [ ] Test unitario en `tests/test_network_sensor.py` con al menos 3 casos.
-  - [ ] Registrado en `cli.py::watch` como opción `--network`.
-  - [ ] Documentado en `docs/architecture.md`.
-- **Documentos a actualizar:** `CHANGELOG.md`, `docs/architecture.md`, `TASKS.md`.
+- **Priority:** high
+- **Effort:** M
+- **Depends on:** —
+- **Description:** create `src/bladerunner/sensors/network_sensor.py` to
+  monitor a process's outbound network connections and emit `Event`s with
+  visited domains/IPs, ports, and traffic volume.
+- **Acceptance criteria:**
+  - [ ] File created at the correct path.
+  - [ ] Inherits from `BaseSensor`.
+  - [ ] Has `name = "network_sensor"`.
+  - [ ] Emits events with `kind=EventKind.NETWORK`.
+  - [ ] Unit test in `tests/test_network_sensor.py` with at least 3 cases.
+  - [ ] Registered in `cli.py::watch` as a `--network` option.
+  - [ ] Documented in `docs/architecture.md`.
+- **Documents to update:** `CHANGELOG.md`, `docs/architecture.md`, `TASKS.md`.
 
 ---
 
-## 📋 Pendientes (ordenadas por prioridad)
+## 📋 Pending (ordered by priority)
 
-### [TASK-002] Actuador de aislamiento (isolation_actuator.py)
-- **Tipo:** feature
+### [TASK-002] Isolation actuator (isolation_actuator.py)
+- **Type:** feature
 - **Milestone:** v0.2
-- **Prioridad:** alta
-- **Esfuerzo:** M
-- **Depende de:** TASK-001
-- **Descripción:** crear `src/bladerunner/actuators/isolation_actuator.py`
-  que aísle un proceso bloqueando su tráfico saliente vía `iptables` (Linux)
-  o `pfctl` (macOS). Debe ser reversible.
-- **Criterios de aceptación:**
-  - [ ] Hereda de `BaseActuator`.
-  - [ ] Implementa `execute()` y `revert()` (idempotente).
-  - [ ] Detecta el SO y usa la herramienta correcta.
-  - [ ] Fallback seguro si no hay permisos.
-  - [ ] Test unitario con mock de subprocess.
-  - [ ] Documentado en `docs/plugins.md` como ejemplo avanzado.
-- **Documentos a actualizar:** `CHANGELOG.md`, `docs/architecture.md`.
+- **Priority:** high
+- **Effort:** M
+- **Depends on:** TASK-001
+- **Description:** create `src/bladerunner/actuators/isolation_actuator.py`
+  to isolate a process by blocking its outbound traffic via `iptables`
+  (Linux) or `pfctl` (macOS). Must be reversible.
+- **Acceptance criteria:**
+  - [ ] Inherits from `BaseActuator`.
+  - [ ] Implements `execute()` and `revert()` (idempotent).
+  - [ ] Detects the OS and uses the correct tool.
+  - [ ] Safe fallback if there are no permissions.
+  - [ ] Unit test with a subprocess mock.
+  - [ ] Documented in `docs/plugins.md` as an advanced example.
+- **Documents to update:** `CHANGELOG.md`, `docs/architecture.md`.
 
-### [TASK-003] Persistencia SQLite
-- **Tipo:** feature
+### [TASK-003] SQLite persistence
+- **Type:** feature
 - **Milestone:** v0.2
-- **Prioridad:** media
-- **Esfuerzo:** M
-- **Depende de:** —
-- **Descripción:** añadir capa de persistencia con SQLite para eventos,
-  veredictos y acciones. Usar SQLModel o SQLAlchemy.
-- **Criterios de aceptación:**
-  - [ ] Módulo `src/bladerunner/core/storage.py`.
-  - [ ] Tablas: `events`, `verdicts`, `actions`.
-  - [ ] Orquestador persiste cada acción ejecutada.
-  - [ ] Tests de integración con SQLite en memoria.
-- **Documentos a actualizar:** `CHANGELOG.md`, `docs/architecture.md`.
+- **Priority:** medium
+- **Effort:** M
+- **Depends on:** —
+- **Description:** add a persistence layer with SQLite for events,
+  verdicts, and actions. Use SQLModel or SQLAlchemy.
+- **Acceptance criteria:**
+  - [ ] Module `src/bladerunner/core/storage.py`.
+  - [ ] Tables: `events`, `verdicts`, `actions`.
+  - [ ] The orchestrator persists every action executed.
+  - [ ] Integration tests with in-memory SQLite.
+- **Documents to update:** `CHANGELOG.md`, `docs/architecture.md`.
 
-### [TASK-004] API REST completa
-- **Tipo:** feature
+### [TASK-004] Complete REST API
+- **Type:** feature
 - **Milestone:** v0.2
-- **Prioridad:** media
-- **Esfuerzo:** M
-- **Depende de:** TASK-003
-- **Descripción:** ampliar `src/bladerunner/api/main.py` con endpoints:
+- **Priority:** medium
+- **Effort:** M
+- **Depends on:** TASK-003
+- **Description:** extend `src/bladerunner/api/main.py` with endpoints:
   `GET /events`, `GET /verdicts`, `GET /actions`, `GET /stats`,
   `POST /agents/{id}/kill`, `POST /agents/{id}/isolate`.
-- **Criterios de aceptación:**
-  - [ ] Endpoints implementados con Pydantic models.
-  - [ ] Documentación automática en `/docs`.
-  - [ ] Tests de integración con TestClient.
-  - [ ] Actualizar `docs/api_reference.md`.
-- **Documentos a actualizar:** `CHANGELOG.md`, `docs/api_reference.md`.
+- **Acceptance criteria:**
+  - [ ] Endpoints implemented with Pydantic models.
+  - [ ] Automatic documentation at `/docs`.
+  - [ ] Integration tests with TestClient.
+  - [ ] Update `docs/api_reference.md`.
+- **Documents to update:** `CHANGELOG.md`, `docs/api_reference.md`.
 
-### [TASK-005] Detector ML — Random Forest
-- **Tipo:** feature
+### [TASK-005] ML detector — Random Forest
+- **Type:** feature
 - **Milestone:** v0.3
-- **Prioridad:** media
-- **Esfuerzo:** L
-- **Depende de:** —
-- **Descripción:** implementar `src/bladerunner/detectors/ml.py` con
-  `RandomForestDetector` que cargue un modelo entrenado y evalúe eventos.
-- **Criterios de aceptación:**
-  - [ ] Clase `RandomForestDetector(BaseDetector)`.
-  - [ ] Carga modelo en `__init__`, no en `evaluate`.
-  - [ ] Test unitario con modelo dummy.
-  - [ ] Script `scripts/train_baseline.py` que entrene con NSL-KDD.
-  - [ ] Documentado en `docs/training.md`.
-- **Documentos a actualizar:** `CHANGELOG.md`, `docs/training.md`.
+- **Priority:** medium
+- **Effort:** L
+- **Depends on:** —
+- **Description:** implement `src/bladerunner/detectors/ml.py` with a
+  `RandomForestDetector` that loads a trained model and evaluates events.
+- **Acceptance criteria:**
+  - [ ] `RandomForestDetector(BaseDetector)` class.
+  - [ ] Loads the model in `__init__`, not in `evaluate`.
+  - [ ] Unit test with a dummy model.
+  - [ ] Script `scripts/train_baseline.py` that trains on NSL-KDD.
+  - [ ] Documented in `docs/training.md`.
+- **Documents to update:** `CHANGELOG.md`, `docs/training.md`.
 
-### [TASK-006] Dashboard web mínimo (HTMX)
-- **Tipo:** feature
+### [TASK-006] Minimal web dashboard (HTMX)
+- **Type:** feature
 - **Milestone:** v0.2
-- **Prioridad:** baja
-- **Esfuerzo:** M
-- **Depende de:** TASK-004
-- **Descripción:** crear dashboard web simple con HTMX + Jinja2 que muestre
-  eventos, veredictos y acciones en tiempo real.
-- **Criterios de aceptación:**
-  - [ ] Ruta `/dashboard` en FastAPI.
-  - [ ] Tabla auto-actualizable cada 5s.
-  - [ ] Sin dependencias JS pesadas.
-- **Documentos a actualizar:** `CHANGELOG.md`, `README.md`.
+- **Priority:** low
+- **Effort:** M
+- **Depends on:** TASK-004
+- **Description:** create a simple web dashboard with HTMX + Jinja2 showing
+  events, verdicts, and actions in real time.
+- **Acceptance criteria:**
+  - [ ] `/dashboard` route in FastAPI.
+  - [ ] Auto-refreshing table every 5s.
+  - [ ] No heavy JS dependencies.
+- **Documents to update:** `CHANGELOG.md`, `README.md`.
 
-### [TASK-007] Humano en el circuito (webhook de aprobación)
-- **Tipo:** feature
+### [TASK-007] Human in the loop (approval webhook)
+- **Type:** feature
 - **Milestone:** v0.2
-- **Prioridad:** media
-- **Esfuerzo:** M
-- **Depende de:** TASK-002
-- **Descripción:** añadir modo `approval` donde las acciones destructivas
-  (ISOLATE, KILL) requieren aprobación manual vía webhook.
-- **Criterios de aceptación:**
-  - [ ] Nuevo modo `approval` en `Orchestrator`.
-  - [ ] Envía webhook con payload de la acción propuesta.
-  - [ ] Espera respuesta con timeout configurable.
-  - [ ] Documentar en `docs/architecture.md`.
-- **Documentos a actualizar:** `CHANGELOG.md`, `docs/architecture.md`.
+- **Priority:** medium
+- **Effort:** M
+- **Depends on:** TASK-002
+- **Description:** add an `approval` mode where destructive actions
+  (ISOLATE, KILL) require manual approval via webhook.
+- **Acceptance criteria:**
+  - [ ] New `approval` mode in `Orchestrator`.
+  - [ ] Sends a webhook with the proposed action's payload.
+  - [ ] Waits for a response with a configurable timeout.
+  - [ ] Documented in `docs/architecture.md`.
+- **Documents to update:** `CHANGELOG.md`, `docs/architecture.md`.
 
-### [TASK-008] Cobertura de tests >80%
-- **Tipo:** test
+### [TASK-008] Test coverage >80%
+- **Type:** test
 - **Milestone:** v0.2
-- **Prioridad:** alta
-- **Esfuerzo:** M
-- **Depende de:** —
-- **Descripción:** añadir tests faltantes hasta alcanzar la cobertura
-  objetivo definida en `docs/testing.md`.
-- **Criterios de aceptación:**
-  - [ ] `pytest --cov=src/bladerunner` reporta >80% global.
+- **Priority:** high
+- **Effort:** M
+- **Depends on:** —
+- **Description:** add the missing tests to reach the target coverage
+  defined in `docs/testing.md`.
+- **Acceptance criteria:**
+  - [ ] `pytest --cov=src/bladerunner` reports >80% overall.
   - [ ] `core/` >90%, `detectors/` >85%, `sensors/` >80%.
-  - [ ] CI bloquea PRs que bajen la cobertura.
-- **Documentos a actualizar:** `CHANGELOG.md`.
+  - [ ] CI blocks PRs that lower coverage.
+- **Documents to update:** `CHANGELOG.md`.
 
-### [TASK-009] Documentación de ejemplos avanzados
-- **Tipo:** docs
+### [TASK-009] Advanced examples documentation
+- **Type:** docs
 - **Milestone:** v0.2
-- **Prioridad:** baja
-- **Esfuerzo:** S
-- **Depende de:** —
-- **Descripción:** añadir `examples/` con casos de uso reales:
-  vigilancia de un bot de Discord, contención de un script de scraping,
-  monitorización de un agente LLM con LangChain.
-- **Criterios de aceptación:**
-  - [ ] 3 ejemplos funcionales en `examples/`.
-  - [ ] Cada uno con su README.
-  - [ ] Documentados en `README.md`.
-- **Documentos a actualizar:** `README.md`, `CHANGELOG.md`.
+- **Priority:** low
+- **Effort:** S
+- **Depends on:** —
+- **Description:** add `examples/` with real-world use cases: monitoring a
+  Discord bot, containing a scraping script, monitoring an LLM agent with
+  LangChain.
+- **Acceptance criteria:**
+  - [ ] 3 working examples in `examples/`.
+  - [ ] Each one with its own README.
+  - [ ] Documented in `README.md`.
+- **Documents to update:** `README.md`, `CHANGELOG.md`.
 
-### [TASK-010] Auditoría de seguridad interna
-- **Tipo:** security
+### [TASK-010] Internal security audit
+- **Type:** security
 - **Milestone:** v0.2
-- **Prioridad:** alta
-- **Esfuerzo:** M
-- **Depende de:** —
-- **Descripción:** revisar todos los puntos de ejecución de comandos
-  (`subprocess`, `os.system`) y garantizar que no hay inyección posible.
-- **Criterios de aceptación:**
-  - [ ] Lista de puntos de ejecución en `docs/security_review.md`.
-  - [ ] Todos usan argumentos como lista, no strings.
-  - [ ] Sin `shell=True` salvo justificación explícita.
-  - [ ] Añadir test de regresión para cada punto crítico.
-- **Documentos a actualizar:** `docs/security_review.md` (nuevo), `CHANGELOG.md`.
+- **Priority:** high
+- **Effort:** M
+- **Depends on:** —
+- **Description:** review every command-execution point (`subprocess`,
+  `os.system`) and ensure there is no possible injection.
+- **Acceptance criteria:**
+  - [ ] List of execution points in `docs/security_review.md`.
+  - [ ] All of them use list-style arguments, not strings.
+  - [ ] No `shell=True` without explicit justification.
+  - [ ] Add a regression test for each critical point.
+- **Documents to update:** `docs/security_review.md` (new), `CHANGELOG.md`.
 
 ---
 
-## ✅ Completadas
+## ✅ Completed
 
-(vacío por ahora)
-
----
-
-## 🚫 Descartadas / Bloqueadas
-
-(vacío por ahora)
+(empty for now)
 
 ---
 
-## 📝 Cómo actualizar este archivo
+## 🚫 Discarded / Blocked
 
-1. Al terminar la "Tarea actual":
-   - Moverla a "✅ Completadas" con la fecha de fin.
-   - Marcar todos los criterios de aceptación con `[x]`.
-2. Promover la siguiente tarea de "📋 Pendientes" a "🎯 Tarea actual".
-3. Si una tarea nueva surge durante el desarrollo, añadirla a "📋 Pendientes"
-   con el formato estándar.
-4. Si una tarea se bloquea, moverla a "🚫 Descartadas / Bloqueadas" con
-   la razón.
+(empty for now)
 
-## 🔄 Regla de oro
+---
 
-**Nunca trabajes en dos tareas a la vez.** Termina, verifica, documenta,
-cierra, y solo entonces pasa a la siguiente.
+## 📝 How to update this file
+
+1. When finishing the "Current task":
+   - Move it to "✅ Completed" with the completion date.
+   - Mark all its acceptance criteria with `[x]`.
+2. Promote the next task from "📋 Pending" to "🎯 Current task".
+3. If a new task comes up during development, add it to "📋 Pending" using
+   the standard format.
+4. If a task gets blocked, move it to "🚫 Discarded / Blocked" with the
+   reason.
+
+## 🔄 Golden rule
+
+**Never work on two tasks at once.** Finish, verify, document, close, and
+only then move on to the next one.

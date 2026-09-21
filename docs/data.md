@@ -1,24 +1,24 @@
-# Manejo de datos
+# Data handling
 
-## Datos procesados
+## Data processed
 
-- Telemetría de procesos.
-- Eventos de red (v0.2+).
-- Logs de acciones.
+- Process telemetry.
+- Network events (v0.2+).
+- Action logs.
 
-## Principios
+## Principles
 
-1. Mínima recolección.
-2. Anonimización de `agent_id`.
-3. Retención limitada (default 30 días).
-4. Cifrado en reposo.
-5. Cumplimiento GDPR.
+1. Minimal collection.
+2. Anonymization of `agent_id`.
+3. Limited retention (default 30 days).
+4. Encryption at rest.
+5. GDPR compliance.
 
-## Datos de entrenamiento
+## Training data
 
-Datasets públicos con licencias permisivas. No se usan datos personales.
+Public datasets with permissive licenses. No personal data is used.
 
-## Configuración
+## Configuration
 
 ```bash
 BLADERUNNER_DATA_RETENTION_DAYS=30

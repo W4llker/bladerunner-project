@@ -1,36 +1,36 @@
 ---
 name: 🟢 Feature request
-about: Proponer una nueva funcionalidad
+about: Propose new functionality
 title: "[FEAT] "
 labels: ["enhancement", "triage"]
 ---
 
-## ¿Qué problema resuelve?
+## What problem does it solve?
 
-<!-- Describe el problema o necesidad. -->
+<!-- Describe the problem or need. -->
 
-## Solución propuesta
+## Proposed solution
 
-<!-- Cómo imaginas la solución. -->
+<!-- How you picture the solution. -->
 
-## Alternativas consideradas
+## Alternatives considered
 
-<!-- Otras opciones que hayas pensado. -->
+<!-- Other options you thought about. -->
 
-## Criterios de aceptación
+## Acceptance criteria
 
-<!-- Lista verificable de qué debe cumplirse. -->
+<!-- A verifiable list of what must be true. -->
 
 - [ ] ...
 - [ ] ...
 
-## ¿Requiere ADR?
+## Does it need an ADR?
 
-<!-- Marca si afecta a más de un módulo, cambia el stack o es difícil de revertir. -->
+<!-- Check if it affects more than one module, changes the stack, or is hard to revert. -->
 
-- [ ] Sí → crear ADR en `docs/decisions.md` antes de implementar.
+- [ ] Yes → create an ADR in `docs/decisions.md` before implementing.
 - [ ] No.
 
-## Contexto adicional
+## Additional context
 
-<!-- Referencias, ejemplos, screenshots. -->
+<!-- References, examples, screenshots. -->

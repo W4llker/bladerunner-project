@@ -1,39 +1,39 @@
-# ADRs — Registro de decisiones arquitectónicas
+# ADRs — Architecture Decision Record log
 
-## Formato
+## Format
 
-- Fecha, estado, contexto, decisión, alternativas, consecuencias.
+- Date, status, context, decision, alternatives, consequences.
 
 ## ADR-001: Python 3.10+
 
-Aceptada. Ecosistema IA/ML, facilidad de contribución.
-Alternativas: Rust, Go, TypeScript.
+Accepted. AI/ML ecosystem, ease of contribution.
+Alternatives: Rust, Go, TypeScript.
 
 ## ADR-002: FastAPI + Uvicorn
 
-Aceptada. Tipado con Pydantic, docs automáticas, async nativo.
-Alternativas: Flask, Django REST, Litestar.
+Accepted. Typing with Pydantic, automatic docs, native async.
+Alternatives: Flask, Django REST, Litestar.
 
-## ADR-003: Contramedidas graduadas
+## ADR-003: Graduated countermeasures
 
-Aceptada. Mapeo fijo `Severity → ActionKind`.
-Alternativas: políticas configurables, RL.
+Accepted. Fixed `Severity → ActionKind` mapping.
+Alternatives: configurable policies, RL.
 
-## ADR-004: Observación externa con psutil
+## ADR-004: External observation with psutil
 
-Aceptada. Funciona con caja negra.
-Alternativas: eBPF, APM, instrumentación.
+Accepted. Works as a black box.
+Alternatives: eBPF, APM, instrumentation.
 
-## ADR-005: Modo `monitor` por defecto
+## ADR-005: `monitor` mode by default
 
-Aceptada. Seguridad por defecto.
-Alternativas: enforce por defecto.
+Accepted. Secure by default.
+Alternatives: enforce by default.
 
 ## ADR-006: Apache 2.0
 
-Aceptada. Uso comercial, cláusula de patentes.
-Alternativas: MIT, GPL, AGPL.
+Accepted. Commercial use, patent clause.
+Alternatives: MIT, GPL, AGPL.
 
-## Cómo añadir una ADR
+## How to add an ADR
 
-Numerar secuencialmente, estado `propuesta` → PR → `aceptada`.
+Number them sequentially, status `proposed` → PR → `accepted`.

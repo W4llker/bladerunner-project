@@ -1,45 +1,45 @@
 ---
 name: 🔴 Bug report
-about: Reportar un comportamiento incorrecto
+about: Report incorrect behavior
 title: "[BUG] "
 labels: ["bug", "triage"]
 ---
 
-## Descripción
+## Description
 
-<!-- Qué ocurre y qué se esperaba que ocurriera. -->
+<!-- What happens and what you expected to happen. -->
 
-## Pasos para reproducir
+## Steps to reproduce
 
 1. ...
 2. ...
 3. ...
 
-## Comportamiento esperado
+## Expected behavior
 
-<!-- Qué debería pasar. -->
+<!-- What should happen. -->
 
-## Comportamiento observado
+## Observed behavior
 
-<!-- Qué pasa realmente. Incluye el error completo. -->
+<!-- What actually happens. Include the full error. -->
 
 ```
 # Stacktrace / logs
 ```
 
-## Entorno
+## Environment
 
-- SO: <!-- ej. Ubuntu 22.04 -->
-- Python: <!-- ej. 3.11.5 -->
-- Bladerunner: <!-- ej. 0.1.0 -->
-- Modo: <!-- monitor | enforce -->
+- OS: <!-- e.g. Ubuntu 22.04 -->
+- Python: <!-- e.g. 3.11.5 -->
+- Bladerunner: <!-- e.g. 0.1.0 -->
+- Mode: <!-- monitor | enforce -->
 
-## ¿Reproducible siempre?
+## Always reproducible?
 
-- [ ] Siempre
-- [ ] Intermitente
-- [ ] Solo una vez
+- [ ] Always
+- [ ] Intermittent
+- [ ] Only once
 
-## Contexto adicional
+## Additional context
 
-<!-- Configuración, dependencias, cualquier cosa relevante. -->
+<!-- Configuration, dependencies, anything relevant. -->

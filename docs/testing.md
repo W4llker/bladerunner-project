@@ -1,47 +1,47 @@
-# Estrategia de pruebas
+# Testing strategy
 
 ## Stack
 
 - pytest + pytest-asyncio
-- pytest-cov (mínimo 80%)
+- pytest-cov (minimum 80%)
 - unittest.mock
 
-## Convenciones
+## Conventions
 
-- `tests/test_<módulo>.py`
-- `test_<comportamiento>`
+- `tests/test_<module>.py`
+- `test_<behavior>`
 - Arrange–Act–Assert
 
-## Tests async
+## Async tests
 
-`async def` directo (modo `auto` en pyproject).
+`async def` directly (`auto` mode in pyproject).
 
-## Fixtures compartidas (conftest.py)
+## Shared fixtures (conftest.py)
 
-Eventos `normal_event` y `anomalous_event`.
+`normal_event` and `anomalous_event` events.
 
-## Categorías
+## Categories
 
-- Unitarios: `tests/test_*.py`
-- Integración: `tests/integration/`
+- Unit: `tests/test_*.py`
+- Integration: `tests/integration/`
 - E2E: `tests/e2e/`
-- Regresión: `tests/regression/`
+- Regression: `tests/regression/`
 
-## Cobertura
+## Coverage
 
 ```bash
 pytest --cov=src/bladerunner --cov-report=term-missing
 ```
 
-Umbrales:
+Thresholds:
 - core: >90%
 - detectors: >85%
 - sensors/actuators: >80%
 - global: >80%
 
-## Reglas
+## Rules
 
-1. Cada feature incluye tests.
-2. Cada bug fix incluye test de regresión.
-3. Usar fixtures.
-4. No borrar tests sin justificar.
+1. Every feature includes tests.
+2. Every bug fix includes a regression test.
+3. Use fixtures.
+4. Don't delete tests without justification.

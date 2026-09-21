@@ -1,13 +1,13 @@
-# Arquitectura de Bladerunner
+# Bladerunner Architecture
 
-## Visión general
+## Overview
 
-Cuatro capas desacopladas comunicadas por un bus de eventos:
+Four decoupled layers connected by an event bus:
 
-1. Sensores → generan `Event`s.
-2. Detectores → consumen `Event`s y producen `Verdict`s.
-3. Orquestador → agrega veredictos y decide `Action`.
-4. Actuadores → ejecutan la `Action`.
+1. Sensors → generate `Event`s.
+2. Detectors → consume `Event`s and produce `Verdict`s.
+3. Orchestrator → aggregates verdicts and decides on an `Action`.
+4. Actuators → execute the `Action`.
 
 ```
 +-----------+  Event   +----------+  Verdict  +--------------+
@@ -21,16 +21,16 @@ Cuatro capas desacopladas comunicadas por un bus de eventos:
                                               +-----------+
 ```
 
-## Principios de diseño
+## Design principles
 
-- Observación externa: no requiere acceso al código del agente.
-- Contramedidas graduadas: log → alert → restrict → isolate → kill.
-- Humano en el circuito opcional: `monitor` vs `enforce`.
-- Extensible: plugins para sensores/detectores/actuadores.
-- Defensivo por diseño.
+- External observation: does not require access to the agent's code.
+- Graduated countermeasures: log → alert → restrict → isolate → kill.
+- Optional human in the loop: `monitor` vs. `enforce`.
+- Extensible: plugins for sensors/detectors/actuators.
+- Defensive by design.
 - Auditable.
 
-## Componentes MVP
+## MVP components
 
 - `ProcessSensor` (psutil).
 - `RuleBasedDetector` (CPU>90, connections>100, open_files>500).
@@ -38,15 +38,15 @@ Cuatro capas desacopladas comunicadas por un bus de eventos:
 - `LogOnlyActuator`, `ProcessKillerActuator`.
 - `Orchestrator`.
 
-## Modelo de datos
+## Data model
 
 - `Event` (timestamp, kind, source, agent_id, data).
 - `Verdict` (is_anomalous, severity, reason, score).
 - `Action` (kind, target_agent_id, severity, reason).
 
-## Mapeo severidad → acción
+## Severity → action mapping
 
-| Severidad | Acción |
+| Severity | Action |
 |---|---|
 | INFO | LOG |
 | LOW | LOG |
@@ -54,4 +54,4 @@ Cuatro capas desacopladas comunicadas por un bus de eventos:
 | HIGH | ISOLATE |
 | CRITICAL | KILL |
 
-En modo `monitor`, ISOLATE y KILL se degradan a ALERT.
+In `monitor` mode, ISOLATE and KILL are downgraded to ALERT.

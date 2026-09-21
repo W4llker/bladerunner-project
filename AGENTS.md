@@ -1,82 +1,82 @@
-# AGENTS.md — Guía para agentes IA que trabajen en Bladerunner
+# AGENTS.md — Guide for AI agents working on Bladerunner
 
-## 1. Contexto
+## 1. Context
 
-Bladerunner es un framework de ciberseguridad defensiva. Lee primero
-README.md, MASTER_WORKFLOW.md y docs/architecture.md.
+Bladerunner is a defensive cybersecurity framework. Read README.md,
+MASTER_WORKFLOW.md, and docs/architecture.md first.
 
-## 2. Estructura
+## 2. Structure
 
 ```
 src/bladerunner/
 ├── core/       → Event, Sensor, Detector, Actuator, Orchestrator
-├── sensors/    → implementaciones de sensores
-├── detectors/  → implementaciones de detectores
-├── actuators/  → implementaciones de actuadores
-├── api/        → API REST (FastAPI)
+├── sensors/    → sensor implementations
+├── detectors/  → detector implementations
+├── actuators/  → actuator implementations
+├── api/        → REST API (FastAPI)
 └── cli.py      → CLI (Typer)
 ```
 
-## 3. Convenciones obligatorias
+## 3. Mandatory conventions
 
-### Código
-- Python 3.10+, tipado estricto en funciones públicas.
-- Formato: `ruff format`. Lint: `ruff check`. Tests: `pytest`.
-- Un componente = un archivo + un test.
-- No añadir dependencias sin justificar en el PR.
-- Modelos ML se cargan en `__init__`, nunca en `evaluate`.
+### Code
+- Python 3.10+, strict typing on public functions.
+- Formatting: `ruff format`. Linting: `ruff check`. Tests: `pytest`.
+- One component = one file + one test.
+- Do not add dependencies without justifying them in the PR.
+- ML models are loaded in `__init__`, never in `evaluate`.
 
-### Documentación
-- Decisiones arquitectónicas → ADR en docs/decisions.md antes de implementar.
-- Cada PR añade entrada en CHANGELOG.md bajo [Unreleased].
-- Cada feature se documenta en docs/.
+### Documentation
+- Architectural decisions → ADR in docs/decisions.md before implementing.
+- Every PR adds an entry to CHANGELOG.md under [Unreleased].
+- Every feature is documented in docs/.
 
 ### Git
-- Ramas: `feat/`, `fix/`, `docs/`, `chore/`, `test/`, `security/`.
+- Branches: `feat/`, `fix/`, `docs/`, `chore/`, `test/`, `security/`.
 - Commits: Conventional Commits.
-- Nunca `git push` sin autorización.
-- Nunca commitear secretos, `.env`, `.ai/` ni datos.
+- Never `git push` without authorization.
+- Never commit secrets, `.env`, `.ai/`, or data.
 
-## 4. Flujo al añadir una feature
+## 4. Flow for adding a feature
 
-1. Leer docs/architecture.md y docs/decisions.md.
-2. Si afecta a más de un módulo → crear ADR.
-3. Implementar siguiendo clases base en core/.
-4. Escribir tests siguiendo docs/testing.md.
-5. Añadir entrada en CHANGELOG.md.
-6. Actualizar docs/ si aplica.
-7. Ejecutar `ruff check . && pytest -v`.
+1. Read docs/architecture.md and docs/decisions.md.
+2. If it affects more than one module → create an ADR.
+3. Implement following the base classes in core/.
+4. Write tests following docs/testing.md.
+5. Add an entry to CHANGELOG.md.
+6. Update docs/ if applicable.
+7. Run `ruff check . && pytest -v`.
 
-## 5. Flujo al añadir un componente
+## 5. Flow for adding a component
 
-Sigue docs/plugins.md. Checklist:
-- [ ] Hereda de clase base.
-- [ ] Tiene `name` único.
-- [ ] Maneja errores sin propagar excepciones.
-- [ ] Tiene test unitario.
-- [ ] Registrado en cli.py si aplica.
-- [ ] Documentado en docs/architecture.md.
-- [ ] `ruff check .` y `pytest -v` pasan.
+Follow docs/plugins.md. Checklist:
+- [ ] Inherits from the base class.
+- [ ] Has a unique `name`.
+- [ ] Handles errors without propagating exceptions.
+- [ ] Has a unit test.
+- [ ] Registered in cli.py if applicable.
+- [ ] Documented in docs/architecture.md.
+- [ ] `ruff check .` and `pytest -v` pass.
 
-## 6. Reglas de seguridad (no negociables)
+## 6. Security rules (non-negotiable)
 
-- Nunca acciones ofensivas fuera del perímetro.
-- Nunca `enforce` sin probar en `monitor`.
-- Nunca commitear secretos.
-- Nunca deshabilitar `monitor` por defecto.
-- Nunca "hackback".
-- Preferir reversibles sobre destructivas.
-- Auditar toda acción ejecutada.
+- Never offensive actions outside the perimeter.
+- Never `enforce` without testing in `monitor` first.
+- Never commit secrets.
+- Never disable `monitor` as the default.
+- Never "hack back".
+- Prefer reversible over destructive actions.
+- Audit every action executed.
 
-## 7. Si no sabes qué hacer
+## 7. If you don't know what to do
 
-1. Consulta docs/roadmap.md.
-2. Busca issues con `good first issue`.
-3. Abre un issue describiendo la duda.
-4. Ante ambigüedad, elige la opción más conservadora y defensiva.
+1. Check docs/roadmap.md.
+2. Look for issues labeled `good first issue`.
+3. Open an issue describing the question.
+4. When in doubt, choose the most conservative and defensive option.
 
-## Documentación relacionada
+## Related documentation
 
-| [TASKS.md](TASKS.md) | Backlog vivo — busca siempre "🎯 Tarea actual" |
-| [DEFINITION_OF_DONE.md](DEFINITION_OF_DONE.md) | Cuándo una tarea está terminada |
-| [docs/agent_workflow.md](docs/agent_workflow.md) | Flujo operativo completo del agente |
+| [TASKS.md](TASKS.md) | Live backlog — always look for "🎯 Current task" |
+| [DEFINITION_OF_DONE.md](DEFINITION_OF_DONE.md) | When a task is considered done |
+| [docs/agent_workflow.md](docs/agent_workflow.md) | Full operational workflow for agents |

@@ -1,7 +1,7 @@
 # API Reference
 
 Base URL: `http://localhost:8000`
-Docs interactivas: `/docs` (Swagger), `/redoc`.
+Interactive docs: `/docs` (Swagger), `/redoc`.
 
 ## Endpoints
 

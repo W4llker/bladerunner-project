@@ -6,20 +6,20 @@
 
 ## psutil.AccessDenied
 
-Ejecutar con permisos elevados o limitar el sensor.
+Run with elevated permissions or restrict the sensor's scope.
 
-## pytest no encuentra tests
+## pytest can't find tests
 
-Verificar `asyncio_mode = "auto"` en pyproject.toml.
+Check `asyncio_mode = "auto"` in pyproject.toml.
 
-## El agente no se mata en enforce
+## The agent isn't killed in enforce mode
 
-Verificar `pid_resolver` y `agent_id`.
+Check `pid_resolver` and `agent_id`.
 
-## ruff falla en CI pero no local
+## ruff fails in CI but not locally
 
 `pip install --upgrade "ruff>=0.4"`.
 
-## Docker Compose no levanta
+## Docker Compose won't start
 
 `cp .env.example .env && docker compose down && docker compose up --build`.

@@ -1,22 +1,22 @@
-# Gobernanza
+# Governance
 
 ## Roles
 
-- Maintainers: aprueban PRs, gestionan releases, definen roadmap.
-- Contributors: abren PRs o issues.
-- Comunidad: usuarios y participantes en discusiones.
+- Maintainers: approve PRs, manage releases, define the roadmap.
+- Contributors: open PRs or issues.
+- Community: users and participants in discussions.
 
-## Decisiones
+## Decisions
 
-- Cambios menores: consenso en el PR.
-- Cambios arquitectónicos: ADR + discusión pública.
-- Conflictos: los maintainers deciden por mayoría simple.
+- Minor changes: consensus on the PR.
+- Architectural changes: ADR + public discussion.
+- Conflicts: maintainers decide by simple majority.
 
 ## Maintainers
 
-- @W4llker — fundador
+- @W4llker — founder
 
-## Cómo convertirte en maintainer
+## How to become a maintainer
 
-Contribuciones sostenidas durante al menos 3 meses, revisión de PRs de otros,
-y nominación por un maintainer existente.
+Sustained contributions for at least 3 months, reviewing other people's
+PRs, and nomination by an existing maintainer.

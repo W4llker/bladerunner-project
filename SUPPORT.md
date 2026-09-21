@@ -1,19 +1,19 @@
-# Soporte
+# Support
 
-## Canales
+## Channels
 
-- Issues de GitHub: bugs, features, dudas técnicas.
-- Discussions: preguntas abiertas, ideas.
-- Email de seguridad: `m.baez.c94@gmail.com`.
+- GitHub Issues: bugs, features, technical questions.
+- Discussions: open questions, ideas.
+- Security email: `m.baez.c94@gmail.com`.
 
-## Antes de abrir un issue
+## Before opening an issue
 
-1. Busca issues existentes.
-2. Verifica docs/troubleshooting.md.
-3. Reproduce en la última versión de `main`.
+1. Search existing issues.
+2. Check docs/troubleshooting.md.
+3. Reproduce on the latest version of `main`.
 
-## Tiempos de respuesta
+## Response times
 
-- Issues: 3-5 días hábiles.
-- PRs: 1-2 semanas.
-- Vulnerabilidades: <72 horas.
+- Issues: 3-5 business days.
+- PRs: 1-2 weeks.
+- Vulnerabilities: <72 hours.

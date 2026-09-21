@@ -1,238 +1,241 @@
-# agent_workflow.md — Cómo trabaja un agente IA en este repositorio
+# agent_workflow.md — How an AI agent works in this repository
 
-Esta guía define el flujo operativo que debe seguir **cualquier agente IA**
-(Claude Code, Cursor, Cline, Aider, Continue, etc.) al trabajar en Bladerunner.
+This guide defines the operational workflow that **any AI agent**
+(Claude Code, Cursor, Cline, Aider, Continue, etc.) must follow when working
+on Bladerunner.
 
-Si eres un agente IA, sigue estos pasos **en orden** en cada sesión.
-
----
-
-## Paso 0 — Preparación (solo la primera vez)
-
-1. Verifica que el repo está clonado y el entorno virtual activo.
-2. Ejecuta `make install-dev` para instalar dependencias.
-3. Ejecuta `make pre-commit-install` para instalar los hooks.
-4. Verifica con `make test` que todos los tests pasan.
+If you are an AI agent, follow these steps **in order** every session.
 
 ---
 
-## Paso 1 — Orientación
+## Step 0 — Setup (first time only)
 
-Al inicio de CADA sesión:
-
-1. Lee `AGENTS.md` completo.
-2. Lee `MASTER_WORKFLOW.md` para el contexto general.
-3. Lee `TASKS.md` y localiza la sección **"🎯 Tarea actual"**.
-4. Lee `DEFINITION_OF_DONE.md` para saber cuándo la tarea estará terminada.
-5. Si la tarea involucra un componente nuevo, lee `docs/plugins.md`.
-6. Si la tarea involucra tests, lee `docs/testing.md`.
-7. Si la tarea involucra una decisión arquitectónica, lee `docs/decisions.md`.
-
-**Salida esperada:** sabes exactamente en qué tarea vas a trabajar y cuáles
-son los criterios de aceptación.
+1. Verify the repo is cloned and the virtual environment is active.
+2. Run `make install-dev` to install dependencies.
+3. Run `make pre-commit-install` to install the hooks.
+4. Verify with `make test` that all tests pass.
 
 ---
 
-## Paso 2 — Preparación de la rama
+## Step 1 — Orientation
+
+At the start of EVERY session:
+
+1. Read `AGENTS.md` in full.
+2. Read `MASTER_WORKFLOW.md` for general context.
+3. Read `TASKS.md` and find the **"🎯 Current task"** section.
+4. Read `DEFINITION_OF_DONE.md` to know when the task will be done.
+5. If the task involves a new component, read `docs/plugins.md`.
+6. If the task involves tests, read `docs/testing.md`.
+7. If the task involves an architectural decision, read `docs/decisions.md`.
+
+**Expected outcome:** you know exactly which task you're working on and
+what its acceptance criteria are.
+
+---
+
+## Step 2 — Branch setup
 
 ```bash
-# Actualiza main
+# Update main
 git checkout main
 git pull origin main
 
-# Crea rama según el tipo de tarea
-git checkout -b feat/task-NNN-descripcion-corta
-# o fix/, docs/, chore/, test/, security/ según corresponda
+# Create a branch based on the task type
+git checkout -b feat/task-NNN-short-description
+# or fix/, docs/, chore/, test/, security/ as appropriate
 ```
 
 ---
 
-## Paso 3 — Implementación
+## Step 3 — Implementation
 
-1. Si la tarea requiere una decisión arquitectónica:
-   - Añade una ADR en `docs/decisions.md` con estado `propuesta`.
-2. Implementa el código siguiendo las convenciones de `AGENTS.md`.
-3. Añade tests siguiendo `docs/testing.md`.
-4. Añade entrada en `CHANGELOG.md` bajo `[Unreleased]` en la categoría correcta.
-5. Actualiza la documentación en `docs/` si aplica.
+1. If the task requires an architectural decision:
+   - Add an ADR to `docs/decisions.md` with status `proposed`.
+2. Implement the code following the conventions in `AGENTS.md`.
+3. Add tests following `docs/testing.md`.
+4. Add an entry to `CHANGELOG.md` under `[Unreleased]` in the correct
+   category.
+5. Update the documentation in `docs/` if applicable.
 
 ---
 
-## Paso 4 — Verificación local
+## Step 4 — Local verification
 
-Ejecuta en orden:
+Run, in order:
 
 ```bash
 make lint         # ruff check
-make test-cov     # pytest con cobertura
-make demo         # demo end-to-end (opcional pero recomendado)
+make test-cov     # pytest with coverage
+make demo         # end-to-end demo (optional but recommended)
 ```
 
-**Criterios de paso:**
-- [ ] `make lint` pasa sin errores.
-- [ ] `make test-cov` pasa y la cobertura no bajó.
-- [ ] `make demo` funciona si la tarea afecta al flujo principal.
+**Pass criteria:**
+- [ ] `make lint` passes with no errors.
+- [ ] `make test-cov` passes and coverage did not drop.
+- [ ] `make demo` works if the task affects the main flow.
 
-Si algo falla, **arregla antes de continuar**. No acumules errores.
-
----
-
-## Paso 5 — Actualizar TASKS.md
-
-1. Marca todos los criterios de aceptación de la tarea con `[x]`.
-2. Mueve la tarea de **"🎯 Tarea actual"** a **"✅ Completadas"**.
-3. Añade la fecha de fin: `(completada YYYY-MM-DD)`.
-4. Promueve la siguiente tarea de **"📋 Pendientes"** a **"🎯 Tarea actual"**.
+If something fails, **fix it before continuing**. Do not accumulate errors.
 
 ---
 
-## Paso 6 — Commit
+## Step 5 — Update TASKS.md
+
+1. Mark all the task's acceptance criteria with `[x]`.
+2. Move the task from **"🎯 Current task"** to **"✅ Completed"**.
+3. Add the completion date: `(completed YYYY-MM-DD)`.
+4. Promote the next task from **"📋 Pending"** to **"🎯 Current task"**.
+
+---
+
+## Step 6 — Commit
 
 ```bash
 git add .
-git commit -m "feat(task-NNN): descripción corta
+git commit -m "feat(task-NNN): short description
 
-- Punto 1 del cambio
-- Punto 2 del cambio
+- First point of the change
+- Second point of the change
 
-Cierra #NNN"
+Closes #NNN"
 ```
 
-**Reglas:**
-- Usa Conventional Commits.
-- Una línea de asunto de <72 caracteres.
-- Cuerpo con detalles si es necesario.
-- Referencia el issue con `Closes #NNN` o `Refs #NNN`.
+**Rules:**
+- Use Conventional Commits.
+- A subject line under 72 characters.
+- A body with details if needed.
+- Reference the issue with `Closes #NNN` or `Refs #NNN`.
 
-**Los hooks de pre-commit se ejecutan automáticamente.** Si fallan,
-arréglalos y repite el commit.
+**Pre-commit hooks run automatically.** If they fail, fix them and commit
+again.
 
 ---
 
-## Paso 7 — Push y PR
+## Step 7 — Push and PR
 
 ```bash
-git push origin feat/task-NNN-descripcion-corta
+git push origin feat/task-NNN-short-description
 ```
 
-Abre un PR en GitHub **usando la plantilla** (se carga automáticamente).
-Rellena todos los campos.
+Open a PR on GitHub **using the template** (it loads automatically).
+Fill in every field.
 
-**Espera a que CI pase.** Si falla, arregla y vuelve a hacer push.
+**Wait for CI to pass.** If it fails, fix it and push again.
 
 ---
 
-## Paso 8 — Reporte al usuario
+## Step 8 — Report to the user
 
-Al terminar la sesión, reporta:
+At the end of the session, report:
 
 ```
-=== Sesión de trabajo — Bladerunner ===
+=== Work session — Bladerunner ===
 
-Tarea completada: [TASK-NNN] Título
-Rama: feat/task-NNN-descripcion
+Task completed: [TASK-NNN] Title
+Branch: feat/task-NNN-description
 PR: #NNN (URL)
 
-Cambios:
-  - Archivos modificados: N
-  - Tests añadidos: N
-  - Cobertura: X% (antes Y%)
+Changes:
+  - Files modified: N
+  - Tests added: N
+  - Coverage: X% (before Y%)
 
-Verificación:
+Verification:
   - make lint: PASS
   - make test-cov: PASS
   - make demo: PASS
 
-Próxima tarea: [TASK-NNN+1] Título
+Next task: [TASK-NNN+1] Title
 
-Dudas / bloqueos:
-  - (ninguno)
+Questions / blockers:
+  - (none)
 ```
 
 ---
 
-## Reglas especiales
+## Special rules
 
-### Si encuentras un bug mientras trabajas en otra cosa
+### If you find a bug while working on something else
 
-1. Abre un issue con la plantilla de bug.
-2. Añade una tarea nueva en `TASKS.md` en "📋 Pendientes".
-3. **No arregles el bug en la rama actual.** Termina la tarea en curso.
+1. Open an issue using the bug template.
+2. Add a new task to `TASKS.md` under "📋 Pending".
+3. **Do not fix the bug on the current branch.** Finish the task in
+   progress first.
 
-### Si la tarea es demasiado grande (>1 día de trabajo)
+### If the task is too large (>1 day of work)
 
-1. Divide la tarea en subtareas en `TASKS.md`.
-2. Trabaja en una subtarea a la vez.
-3. Marca la tarea original como "🚫 Bloqueada hasta que se completen las subtareas".
+1. Split the task into subtasks in `TASKS.md`.
+2. Work on one subtask at a time.
+3. Mark the original task as "🚫 Blocked until the subtasks are completed".
 
-### Si la tarea requiere una decisión arquitectónica
+### If the task requires an architectural decision
 
-1. Detente.
-2. Escribe una ADR en `docs/decisions.md` con estado `propuesta`.
-3. Pregunta al usuario antes de implementar.
-4. No sigas hasta tener aprobación.
+1. Stop.
+2. Write an ADR in `docs/decisions.md` with status `proposed`.
+3. Ask the user before implementing.
+4. Do not continue until you have approval.
 
-### Si no sabes qué hacer
+### If you don't know what to do
 
-1. Consulta `TASKS.md`, `docs/roadmap.md`, `docs/decisions.md`.
-2. Si sigue sin estar claro, **detente y pregunta al usuario**.
-3. **Nunca improvises** una solución no especificada.
+1. Check `TASKS.md`, `docs/roadmap.md`, `docs/decisions.md`.
+2. If it's still unclear, **stop and ask the user**.
+3. **Never improvise** an unspecified solution.
 
-### Si rompes algo
+### If you break something
 
-1. No entres en pánico.
-2. Identifica qué rompiste: `git diff`, `git log`.
-3. Si no puedes arreglarlo en 15 minutos, revierte:
+1. Don't panic.
+2. Identify what you broke: `git diff`, `git log`.
+3. If you can't fix it in 15 minutes, revert:
    ```bash
    git checkout main
-   git branch -D feat/task-NNN-descripcion
+   git branch -D feat/task-NNN-description
    ```
-4. Reporta al usuario qué pasó.
+4. Report to the user what happened.
 
 ---
 
-## Anti-patrones (lo que NUNCA debes hacer)
+## Anti-patterns (what you must NEVER do)
 
-- ❌ Trabajar en dos tareas a la vez.
-- ❌ Commitear sin tests.
-- ❌ Commitear sin actualizar `CHANGELOG.md` y `TASKS.md`.
-- ❌ Silenciar errores con `try/except: pass`.
-- ❌ Bajar la cobertura de tests.
-- ❌ Añadir dependencias sin justificar.
-- ❌ Hacer `git push --force` a `main`.
-- ❌ Modificar `.ai/` o `.env`.
-- ❌ Modo `enforce` por defecto.
-- ❌ Ejecutar acciones ofensivas fuera del perímetro.
-- ❌ Improvisar cuando hay ambigüedad.
+- ❌ Work on two tasks at once.
+- ❌ Commit without tests.
+- ❌ Commit without updating `CHANGELOG.md` and `TASKS.md`.
+- ❌ Silence errors with `try/except: pass`.
+- ❌ Lower test coverage.
+- ❌ Add dependencies without justification.
+- ❌ Run `git push --force` on `main`.
+- ❌ Modify `.ai/` or `.env`.
+- ❌ Default to `enforce` mode.
+- ❌ Execute offensive actions outside the perimeter.
+- ❌ Improvise when there is ambiguity.
 
 ---
 
-## Ciclo completo (resumen visual)
+## Full cycle (visual summary)
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│ 1. Orientación                                       │
+│ 1. Orientation                                       │
 │    AGENTS.md → MASTER_WORKFLOW.md → TASKS.md → DoD   │
 ├──────────────────────────────────────────────────────┤
-│ 2. Rama                                              │
-│    git checkout -b feat/task-NNN-descripcion         │
+│ 2. Branch                                            │
+│    git checkout -b feat/task-NNN-description         │
 ├──────────────────────────────────────────────────────┤
-│ 3. Implementación                                    │
-│    código + tests + CHANGELOG + docs                 │
+│ 3. Implementation                                    │
+│    code + tests + CHANGELOG + docs                   │
 ├──────────────────────────────────────────────────────┤
-│ 4. Verificación                                      │
+│ 4. Verification                                      │
 │    make lint && make test-cov && make demo           │
 ├──────────────────────────────────────────────────────┤
-│ 5. Actualizar TASKS.md                               │
-│    marcar completada, promover siguiente             │
+│ 5. Update TASKS.md                                   │
+│    mark completed, promote the next one              │
 ├──────────────────────────────────────────────────────┤
 │ 6. Commit                                            │
 │    git commit -m "feat(task-NNN): ..."               │
 ├──────────────────────────────────────────────────────┤
-│ 7. Push y PR                                         │
-│    git push → abrir PR con plantilla                 │
+│ 7. Push and PR                                       │
+│    git push → open PR with the template               │
 ├──────────────────────────────────────────────────────┤
-│ 8. Reporte                                           │
-│    resumen al usuario                                │
+│ 8. Report                                            │
+│    summary for the user                              │
 └──────────────────────────────────────────────────────┘
 ```

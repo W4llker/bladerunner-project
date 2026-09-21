@@ -1,19 +1,19 @@
-# Política de Seguridad
+# Security Policy
 
-## Reportar vulnerabilidades
+## Reporting vulnerabilities
 
-No abras un issue público. Envía email a `m.baez.c94@gmail.com`
-con: descripción, pasos para reproducir, impacto.
+Do not open a public issue. Send an email to `m.baez.c94@gmail.com`
+with: a description, steps to reproduce, and impact.
 
-Responderemos en menos de 72 horas.
+We will respond within 72 hours.
 
-## Uso responsable
+## Responsible use
 
-Bladerunner está diseñado para defensa dentro de infraestructura propia.
-No debe usarse para atacar sistemas de terceros.
+Bladerunner is designed for defense within infrastructure you own.
+It must not be used to attack third-party systems.
 
-## Reglas
+## Rules
 
-- Nunca acciones ofensivas fuera del perímetro.
-- Modo `monitor` por defecto.
-- Auditoría obligatoria de acciones.
+- Never offensive actions outside the perimeter.
+- `monitor` mode by default.
+- Mandatory auditing of actions.

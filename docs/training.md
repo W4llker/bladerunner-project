@@ -1,12 +1,12 @@
-# Entrenamiento de modelos ML
+# ML model training
 
-## Objetivo
+## Goal
 
-Detectores basados en ML que generalicen a ataques desconocidos.
+ML-based detectors that generalize to unknown attacks.
 
 ## Datasets
 
-| Dataset | Fuente |
+| Dataset | Source |
 |---|---|
 | Dendroaspis Tetragon HIDS | HF: rypow/dendroaspis-tetragon-hids |
 | CICIDS2017 | HF: rdpahalavan/CIC-IDS2017 |
@@ -20,20 +20,20 @@ Detectores basados en ML que generalicen a ataques desconocidos.
 
 ## Pipeline
 
-1. Descarga → exploración → preprocesamiento.
+1. Download → exploration → preprocessing.
 2. Baseline (RF, IF).
 3. Autoencoder.
-4. Integración en `src/bladerunner/detectors/ml.py`.
-5. Prueba con agente simulado.
+4. Integration into `src/bladerunner/detectors/ml.py`.
+5. Test with a simulated agent.
 6. Sandbox (OpenShell, Enclave).
 
-## Métricas de aceptación
+## Acceptance metrics
 
 - Precision >0.95
 - Recall >0.90
 - F1 >0.92
 - FP <5%
-- Latencia <2s
+- Latency <2s
 
 ## Scripts
 

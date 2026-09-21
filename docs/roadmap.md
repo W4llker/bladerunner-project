@@ -1,39 +1,39 @@
 # Roadmap
 
-## v0.1 (MVP) — actual
-- [x] Estructura base
+## v0.1 (MVP) — current
+- [x] Base structure
 - [x] ProcessSensor
 - [x] RuleBasedDetector + AnomalyDetector
 - [x] LogOnlyActuator + ProcessKillerActuator
-- [x] CLI y API REST
-- [x] Demo end-to-end
+- [x] CLI and REST API
+- [x] End-to-end demo
 - [x] CI
-- [x] Documentación
+- [x] Documentation
 
 ## v0.2
-- [ ] API REST completa
-- [ ] Sensor de red
-- [ ] Actuador de aislamiento (iptables/cgroups)
-- [ ] Persistencia SQLite
-- [ ] Dashboard HTMX
-- [ ] Humano en el circuito (webhook)
-- [ ] Cobertura >80%
+- [ ] Complete REST API
+- [ ] Network sensor
+- [ ] Isolation actuator (iptables/cgroups)
+- [ ] SQLite persistence
+- [ ] HTMX dashboard
+- [ ] Human in the loop (webhook)
+- [ ] Coverage >80%
 
 ## v0.3
-- [ ] Detector ML (RF, IF)
+- [ ] ML detector (RF, IF)
 - [ ] Autoencoder (PyTorch)
-- [ ] Integración con HF datasets
-- [ ] Soporte LLM (LangChain, AutoGPT)
-- [ ] Conectores Docker/K8s
+- [ ] HF datasets integration
+- [ ] LLM support (LangChain, AutoGPT)
+- [ ] Docker/K8s connectors
 
 ## v0.4
 - [ ] RL (Stable-Baselines3)
 - [ ] CyberBattleSim, MininetGym
-- [ ] Multi-agente
+- [ ] Multi-agent
 
 ## v1.0
-- [ ] API estable
-- [ ] Docs completas
-- [ ] Cobertura >90%
+- [ ] Stable API
+- [ ] Complete docs
+- [ ] Coverage >90%
 - [ ] PyPI
-- [ ] Auditoría externa
+- [ ] External audit

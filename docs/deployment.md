@@ -1,6 +1,6 @@
-# Despliegue
+# Deployment
 
-## Modos
+## Modes
 
 - Local (dev)
 - Docker Compose
@@ -25,7 +25,7 @@ docker compose up --build -d
 
 ## Kubernetes
 
-Manifiestos en `deploy/k8s/`: deployment, service, secret.
+Manifests in `deploy/k8s/`: deployment, service, secret.
 
 ## Build & push
 
@@ -34,13 +34,13 @@ docker build -t ghcr.io/W4llker/bladerunner:0.1.0 .
 docker push ghcr.io/W4llker/bladerunner:0.1.0
 ```
 
-Automatizado en `.github/workflows/release.yml`.
+Automated in `.github/workflows/release.yml`.
 
-## Seguridad en producción
+## Production security
 
-1. Nunca `enforce` sin staging.
-2. Contenedor no-root, filesystem readonly.
-3. Rotar secretos.
-4. Logs a sistema externo.
-5. Aislar Bladerunner de los agentes.
-6. Backup de `models/` y `data/processed/`.
+1. Never `enforce` without staging first.
+2. Non-root container, read-only filesystem.
+3. Rotate secrets.
+4. Ship logs to an external system.
+5. Isolate Bladerunner from the agents it watches.
+6. Back up `models/` and `data/processed/`.

@@ -1,54 +1,54 @@
-## ¿Qué hace este PR?
+## What does this PR do?
 
-<!-- Descripción breve y clara. Una o dos frases. -->
+<!-- Short, clear description. One or two sentences. -->
 
-## ¿Por qué?
+## Why?
 
-<!-- Contexto: qué problema resuelve, qué issue cierra. -->
+<!-- Context: what problem it solves, what issue it closes. -->
 
-Closes #<!-- número de issue -->
+Closes #<!-- issue number -->
 
-## Tipo de cambio
+## Type of change
 
-<!-- Marca con [x] lo que aplique. -->
+<!-- Check with [x] whatever applies. -->
 
-- [ ] 🟢 Feature (nueva funcionalidad)
-- [ ] 🔴 Bugfix (corrección de bug)
-- [ ] 📚 Docs (solo documentación)
-- [ ] ♻️ Refactor (sin cambio funcional)
-- [ ] 🧪 Test (solo tests)
-- [ ] 🔧 Chore (mantenimiento)
-- [ ] 🔒 Security (parche de seguridad)
+- [ ] 🟢 Feature (new functionality)
+- [ ] 🔴 Bugfix (bug fix)
+- [ ] 📚 Docs (documentation only)
+- [ ] ♻️ Refactor (no functional change)
+- [ ] 🧪 Test (tests only)
+- [ ] 🔧 Chore (maintenance)
+- [ ] 🔒 Security (security patch)
 
 ## Checklist (Definition of Done)
 
-Ver [DEFINITION_OF_DONE.md](../DEFINITION_OF_DONE.md) para criterios completos.
+See [DEFINITION_OF_DONE.md](../DEFINITION_OF_DONE.md) for the full criteria.
 
-- [ ] Código implementado en la ruta correcta.
-- [ ] Tests añadidos o actualizados.
-- [ ] `ruff check .` pasa.
-- [ ] `pytest -v` pasa.
-- [ ] Cobertura global no baja.
-- [ ] `CHANGELOG.md` actualizado bajo `[Unreleased]`.
-- [ ] `TASKS.md` actualizado (tarea movida a "✅ Completadas").
-- [ ] Documentación actualizada (`docs/*.md`, `README.md`, etc.) si aplica.
-- [ ] Sin secretos, `.env`, `.ai/` ni datos personales en el diff.
-- [ ] Sin dependencias nuevas sin justificar.
+- [ ] Code implemented in the correct path.
+- [ ] Tests added or updated.
+- [ ] `ruff check .` passes.
+- [ ] `pytest -v` passes.
+- [ ] Global coverage does not drop.
+- [ ] `CHANGELOG.md` updated under `[Unreleased]`.
+- [ ] `TASKS.md` updated (task moved to "✅ Completed").
+- [ ] Documentation updated (`docs/*.md`, `README.md`, etc.) if applicable.
+- [ ] No secrets, `.env`, `.ai/`, or personal data in the diff.
+- [ ] No new dependencies without justification.
 
-## Cómo probar
+## How to test
 
-<!-- Pasos exactos para que un revisor reproduzca el cambio. -->
+<!-- Exact steps for a reviewer to reproduce the change. -->
 
 ```bash
-# Ejemplo
+# Example
 make test
 python examples/run_demo.py
 ```
 
-## Capturas / logs (si aplica)
+## Screenshots / logs (if applicable)
 
-<!-- Opcional: capturas, logs, salidas de consola. -->
+<!-- Optional: screenshots, logs, console output. -->
 
-## Notas para el revisor
+## Notes for the reviewer
 
-<!-- Opcional: decisiones tomadas, dudas, alternativas descartadas. -->
+<!-- Optional: decisions made, open questions, discarded alternatives. -->

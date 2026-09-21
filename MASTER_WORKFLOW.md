@@ -1,94 +1,94 @@
-# MASTER_WORKFLOW.md — Flujo maestro de Bladerunner
+# MASTER_WORKFLOW.md — Bladerunner's master workflow
 
-> Punto de entrada único para cualquier persona que trabaje en Bladerunner.
+> Single entry point for anyone working on Bladerunner.
 
-## 1. ¿Qué es Bladerunner?
+## 1. What is Bladerunner?
 
-Framework de ciberseguridad defensiva para detectar, aislar y neutralizar
-agentes autónomos descontrolados sin inspeccionar su código interno.
+A defensive cybersecurity framework to detect, isolate, and neutralize
+rogue autonomous agents without inspecting their internal code.
 
-## 2. Mapa de documentación
+## 2. Documentation map
 
-### Entender el proyecto
+### Understanding the project
 - [README.md](README.md)
 - [docs/architecture.md](docs/architecture.md)
 - [docs/ethics.md](docs/ethics.md)
 - [docs/roadmap.md](docs/roadmap.md)
 - [docs/glossary.md](docs/glossary.md)
 
-### Contribuir
+### Contributing
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [docs/testing.md](docs/testing.md)
 - [docs/plugins.md](docs/plugins.md)
 - [docs/decisions.md](docs/decisions.md)
 - [CHANGELOG.md](CHANGELOG.md)
 
-### Desplegar
+### Deploying
 - [docs/deployment.md](docs/deployment.md)
 - [SECURITY.md](SECURITY.md)
 
-### Entrenar modelos
+### Training models
 - [docs/training.md](docs/training.md)
 
-### Para agentes IA
+### For AI agents
 - [AGENTS.md](AGENTS.md)
 
-## 3. Flujo del desarrollador
+## 3. Developer workflow
 
-1. Leer README.md, AGENTS.md, docs/architecture.md.
-2. Elegir issue del roadmap o abrir uno nuevo.
-3. `git checkout -b feat/mi-aporte`.
-4. Si es decisión arquitectónica → ADR en docs/decisions.md.
-5. Implementar siguiendo docs/plugins.md.
-6. Escribir tests siguiendo docs/testing.md.
-7. Añadir entrada en CHANGELOG.md [Unreleased].
-8. Ejecutar `ruff check . && pytest -v`.
-9. Commit con Conventional Commits, push, abrir PR.
-10. Review por maintainer, merge a main.
+1. Read README.md, AGENTS.md, docs/architecture.md.
+2. Pick an issue from the roadmap or open a new one.
+3. `git checkout -b feat/my-contribution`.
+4. If it's an architectural decision → ADR in docs/decisions.md.
+5. Implement following docs/plugins.md.
+6. Write tests following docs/testing.md.
+7. Add an entry to CHANGELOG.md [Unreleased].
+8. Run `ruff check . && pytest -v`.
+9. Commit using Conventional Commits, push, open a PR.
+10. Review by a maintainer, merge to main.
 
-## 4. Flujo del agente IA
+## 4. AI agent workflow
 
-1. Leer AGENTS.md primero.
-2. Consultar docs/decisions.md antes de cambios estructurales.
-3. Seguir docs/testing.md y docs/plugins.md.
-4. Actualizar CHANGELOG.md en cada PR.
-5. Ejecutar `ruff check . && pytest -v` antes de declarar éxito.
-6. Nunca `git push` sin autorización.
-7. Nunca acciones ofensivas fuera del perímetro.
+1. Read AGENTS.md first.
+2. Check docs/decisions.md before structural changes.
+3. Follow docs/testing.md and docs/plugins.md.
+4. Update CHANGELOG.md on every PR.
+5. Run `ruff check . && pytest -v` before declaring success.
+6. Never `git push` without authorization.
+7. Never offensive actions outside the perimeter.
 
-## 5. Fases del proyecto
+## 5. Project phases
 
-- ✅ Fase 0 — Bootstrap (completada).
-- 🟡 Fase 1 — MVP estable (actual).
-- 🔵 Fase 2 — Detección con ML.
-- 🟣 Fase 3 — Políticas adaptativas (RL).
-- 🟢 Fase 4 — Integraciones.
-- 🔴 Fase 5 — Producción.
+- ✅ Phase 0 — Bootstrap (completed).
+- 🟡 Phase 1 — Stable MVP (current).
+- 🔵 Phase 2 — ML-based detection.
+- 🟣 Phase 3 — Adaptive policies (RL).
+- 🟢 Phase 4 — Integrations.
+- 🔴 Phase 5 — Production.
 
-## 6. Convenciones
+## 6. Conventions
 
-### Ramas
+### Branches
 - `main`, `feat/*`, `fix/*`, `docs/*`, `chore/*`, `test/*`, `security/*`.
 
 ### Commits (Conventional Commits)
 - `feat:`, `fix:`, `docs:`, `test:`, `refactor:`, `chore:`, `security:`
 
-### Versionado (SemVer)
+### Versioning (SemVer)
 `MAJOR.MINOR.PATCH`.
 
-## 7. Estructura del código
+## 7. Code structure
 
 ```
 src/bladerunner/
-├── core/       → clases base
-├── sensors/    → sensores
-├── detectors/  → detectores
-├── actuators/  → actuadores
-├── api/        → API REST
+├── core/       → base classes
+├── sensors/    → sensors
+├── detectors/  → detectors
+├── actuators/  → actuators
+├── api/        → REST API
 └── cli.py      → CLI
 ```
 
-## 8. Primeros pasos
+## 8. Getting started
 
 ```bash
 git clone git@github.com:W4llker/bladerunner-project.git

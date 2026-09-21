@@ -1,40 +1,40 @@
 # Changelog
 
-Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
-Versionado: [Semantic Versioning](https://semver.org/lang/es/).
+Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Versioning: [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
 ### Added
-- Estructura base del proyecto.
+- Base project structure.
 - ProcessSensor, RuleBasedDetector, AnomalyDetector.
 - LogOnlyActuator, ProcessKillerActuator.
 - CLI `bladerunner watch`.
-- API REST con `/health`.
+- REST API with `/health`.
 - Demo examples/run_demo.py.
-- CI con GitHub Actions.
-- Documentación completa.
-- Andamiaje agéntico: `TASKS.md`, `DEFINITION_OF_DONE.md`, plantillas de
-  issues y PR, `.pre-commit-config.yaml`, `Makefile`, test e2e y
+- CI with GitHub Actions.
+- Complete documentation.
+- Agentic development scaffolding: `TASKS.md`, `DEFINITION_OF_DONE.md`, issue
+  and PR templates, `.pre-commit-config.yaml`, `Makefile`, e2e test, and
   `docs/agent_workflow.md`.
-- Regla CRITICAL en `RuleBasedDetector` (CPU > 95%) para que el modo
-  `enforce` pueda disparar KILL.
+- CRITICAL rule in `RuleBasedDetector` (CPU > 95%) so that `enforce` mode
+  can trigger KILL.
 
 ### Fixed
-- `BaseSensor.stream()` ya no se declara `async def` (mypy lo tipaba como
-  `Coroutine` en vez de `AsyncIterator`, rompiendo `ruff`/`mypy`).
-- `tests/e2e/test_demo.py` usa `asyncio.create_subprocess_exec` en vez de
-  `subprocess.Popen` (ASYNC220).
+- `BaseSensor.stream()` is no longer declared `async def` (mypy inferred it
+  as `Coroutine` instead of `AsyncIterator`, breaking `ruff`/`mypy`).
+- `tests/e2e/test_demo.py` now uses `asyncio.create_subprocess_exec` instead
+  of `subprocess.Popen` (ASYNC220).
 
 ## [0.1.0] — 2024-XX-XX
 
-Primera versión del MVP.
+First MVP release.
 
-## Convención de versionado
+## Versioning convention
 
 `MAJOR.MINOR.PATCH`.
 
-## Cómo actualizar
+## How to update
 
-Cada PR añade entrada en [Unreleased] bajo Added, Changed, Deprecated,
-Removed, Fixed, Security.
+Every PR adds an entry under [Unreleased], in Added, Changed, Deprecated,
+Removed, Fixed, or Security.

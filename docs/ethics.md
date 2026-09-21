@@ -1,23 +1,23 @@
-# Consideraciones éticas y legales
+# Ethical and legal considerations
 
-Bladerunner es defensivo. Se rechaza cualquier uso ofensivo.
+Bladerunner is defensive. Any offensive use is rejected.
 
-## Principios
+## Principles
 
-1. Consentimiento: solo se monitorean agentes propios o autorizados.
-2. Proporcionalidad.
-3. Transparencia.
-4. Reversibilidad.
-5. No hackback.
-6. Auditoría.
+1. Consent: only your own or authorized agents are monitored.
+2. Proportionality.
+3. Transparency.
+4. Reversibility.
+5. No hack-back.
+6. Auditability.
 
-## Riesgos a evitar
+## Risks to avoid
 
-- Censurar agentes legítimos.
-- Escalada armamentista.
-- Falsos positivos.
-- Violación legal (CFAA, GDPR).
+- Censoring legitimate agents.
+- Arms-race escalation.
+- False positives.
+- Legal violations (CFAA, GDPR).
 
-## Reglas para contribuidores
+## Rules for contributors
 
-PRs que faciliten usos ofensivos serán rechazados.
+PRs that enable offensive uses will be rejected.

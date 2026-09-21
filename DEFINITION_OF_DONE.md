@@ -1,116 +1,116 @@
-# DEFINITION_OF_DONE.md — Criterios de "terminado"
+# DEFINITION_OF_DONE.md — "Done" criteria
 
-> **Instrucciones para el agente IA:** una tarea está terminada **solo si
-> cumple TODOS los criterios de su tipo**. Si falta uno, la tarea no está
-> terminada. No la muevas a "✅ Completadas" hasta cumplirlos todos.
+> **Instructions for the AI agent:** a task is done **only if it meets ALL
+> the criteria for its type**. If one is missing, the task is not done. Do
+> not move it to "✅ Completed" until all of them are met.
 
 ---
 
-## Criterios por tipo de tarea
+## Criteria by task type
 
-### 🟢 Feature (nueva funcionalidad)
+### 🟢 Feature (new functionality)
 
-- [ ] Código implementado en la ruta correcta.
-- [ ] Hereda de la clase base correspondiente (si aplica).
-- [ ] Tiene `name` único (si es componente).
-- [ ] Maneja errores sin propagar excepciones al orquestador.
-- [ ] Test unitario con al menos 3 casos (éxito, fallo, borde).
-- [ ] Test de integración si afecta al flujo sensor→detector→actuador.
-- [ ] Registrado en `cli.py` si debe usarse por defecto.
-- [ ] Documentado en `docs/architecture.md` o `docs/plugins.md`.
-- [ ] Entrada en `CHANGELOG.md` bajo `[Unreleased] / Added`.
-- [ ] `ruff check .` pasa.
-- [ ] `pytest -v` pasa.
-- [ ] Cobertura global no baja.
-- [ ] Tarea movida a "✅ Completadas" en `TASKS.md`.
+- [ ] Code implemented in the correct path.
+- [ ] Inherits from the corresponding base class (if applicable).
+- [ ] Has a unique `name` (if it's a component).
+- [ ] Handles errors without propagating exceptions to the orchestrator.
+- [ ] Unit test with at least 3 cases (success, failure, edge).
+- [ ] Integration test if it affects the sensor→detector→actuator flow.
+- [ ] Registered in `cli.py` if it should be used by default.
+- [ ] Documented in `docs/architecture.md` or `docs/plugins.md`.
+- [ ] Entry in `CHANGELOG.md` under `[Unreleased] / Added`.
+- [ ] `ruff check .` passes.
+- [ ] `pytest -v` passes.
+- [ ] Global coverage does not drop.
+- [ ] Task moved to "✅ Completed" in `TASKS.md`.
 
 ### 🔴 Bugfix
 
-- [ ] Bug reproducido con un test de regresión (falla antes del fix).
-- [ ] Fix implementado.
-- [ ] Test de regresión ahora pasa.
-- [ ] No se rompen otros tests.
-- [ ] Causa raíz documentada en el PR.
-- [ ] Entrada en `CHANGELOG.md` bajo `[Unreleased] / Fixed`.
-- [ ] `ruff check .` y `pytest -v` pasan.
-- [ ] Tarea movida a "✅ Completadas" en `TASKS.md`.
+- [ ] Bug reproduced with a regression test (fails before the fix).
+- [ ] Fix implemented.
+- [ ] Regression test now passes.
+- [ ] No other tests are broken.
+- [ ] Root cause documented in the PR.
+- [ ] Entry in `CHANGELOG.md` under `[Unreleased] / Fixed`.
+- [ ] `ruff check .` and `pytest -v` pass.
+- [ ] Task moved to "✅ Completed" in `TASKS.md`.
 
-### 📚 Docs (solo documentación)
+### 📚 Docs (documentation only)
 
-- [ ] Contenido escrito con ejemplos ejecutables cuando aplique.
-- [ ] Enlaces internos verificados (sin links roscos).
-- [ ] Ortografía y gramática revisadas.
-- [ ] Si describe comportamiento, coincide con el código actual.
-- [ ] Entrada en `CHANGELOG.md` bajo `[Unreleased] / Changed` o `Added`.
-- [ ] Tarea movida a "✅ Completadas" en `TASKS.md`.
+- [ ] Content written with runnable examples where applicable.
+- [ ] Internal links verified (no broken links).
+- [ ] Spelling and grammar reviewed.
+- [ ] If it describes behavior, it matches the current code.
+- [ ] Entry in `CHANGELOG.md` under `[Unreleased] / Changed` or `Added`.
+- [ ] Task moved to "✅ Completed" in `TASKS.md`.
 
 ### ♻️ Refactor
 
-- [ ] Sin cambios funcionales (tests existentes siguen pasando sin cambios).
-- [ ] Si cambia comportamiento, se trata como feature.
-- [ ] Cobertura de tests no baja.
-- [ ] Documentación actualizada si aplica.
-- [ ] Entrada en `CHANGELOG.md` bajo `[Unreleased] / Changed`.
-- [ ] `ruff check .` y `pytest -v` pasan.
-- [ ] Tarea movida a "✅ Completadas" en `TASKS.md`.
+- [ ] No functional changes (existing tests still pass unchanged).
+- [ ] If behavior changes, it is treated as a feature.
+- [ ] Test coverage does not drop.
+- [ ] Documentation updated if applicable.
+- [ ] Entry in `CHANGELOG.md` under `[Unreleased] / Changed`.
+- [ ] `ruff check .` and `pytest -v` pass.
+- [ ] Task moved to "✅ Completed" in `TASKS.md`.
 
-### 🧪 Test (solo tests)
+### 🧪 Test (tests only)
 
-- [ ] Tests añadidos cubren el caso especificado.
-- [ ] Cobertura global sube o se mantiene.
-- [ ] No se modifican tests existentes para "hacerlos pasar".
-- [ ] Si el test descubre un bug, se abre un issue o una nueva tarea.
-- [ ] Entrada en `CHANGELOG.md` si aporta valor visible.
-- [ ] Tarea movida a "✅ Completadas" en `TASKS.md`.
+- [ ] Added tests cover the specified case.
+- [ ] Global coverage goes up or stays the same.
+- [ ] Existing tests are not modified just to "make them pass".
+- [ ] If the test uncovers a bug, an issue or new task is opened.
+- [ ] Entry in `CHANGELOG.md` if it adds visible value.
+- [ ] Task moved to "✅ Completed" in `TASKS.md`.
 
-### 🔧 Chore (mantenimiento)
+### 🔧 Chore (maintenance)
 
-- [ ] Cambio mínimo y localizado.
-- [ ] No rompe build, lint ni tests.
-- [ ] Documentado en el PR si afecta a otros contribuidores.
-- [ ] Tarea movida a "✅ Completadas" en `TASKS.md`.
+- [ ] Minimal, localized change.
+- [ ] Does not break the build, lint, or tests.
+- [ ] Documented in the PR if it affects other contributors.
+- [ ] Task moved to "✅ Completed" in `TASKS.md`.
 
 ### 🔒 Security
 
-- [ ] Vulnerabilidad identificada y documentada.
-- [ ] Fix implementado con test de regresión.
-- [ ] Aviso a maintainers si es crítica (ver `SECURITY.md`).
-- [ ] Entrada en `CHANGELOG.md` bajo `[Unreleased] / Security`.
-- [ ] Tarea movida a "✅ Completadas" en `TASKS.md`.
+- [ ] Vulnerability identified and documented.
+- [ ] Fix implemented with a regression test.
+- [ ] Maintainers notified if critical (see `SECURITY.md`).
+- [ ] Entry in `CHANGELOG.md` under `[Unreleased] / Security`.
+- [ ] Task moved to "✅ Completed" in `TASKS.md`.
 
 ---
 
-## Criterios transversales (aplican a TODO tipo)
+## Cross-cutting criteria (apply to EVERY type)
 
-- [ ] Rama con nombre correcto (`feat/`, `fix/`, `docs/`, etc.).
-- [ ] Commits con Conventional Commits.
-- [ ] PR abierto con la plantilla completa.
-- [ ] CI (GitHub Actions) pasa en verde.
-- [ ] Al menos un revisor asignado (o self-review con checklist marcada).
-- [ ] Sin `TODO` sin issue asociado.
-- [ ] Sin secretos, `.env`, `.ai/` ni datos personales en el diff.
-- [ ] Sin código comentado "por si acaso".
-- [ ] Sin dependencias nuevas sin justificar en el PR.
-
----
-
-## Anti-criterios (la tarea NO está terminada si...)
-
-- ❌ El test "pasa" pero no prueba realmente lo que dice probar.
-- ❌ Se silencia un error con `try/except: pass`.
-- ❌ Se añade `# type: ignore` sin justificación.
-- ❌ Se baja la cobertura global.
-- ❌ Se comenta código sin issue que lo rastree.
-- ❌ Se hace `git push --force` a `main`.
-- ❌ Se mergea sin CI verde.
-- ❌ Se mergea sin actualizar `CHANGELOG.md`.
-- ❌ Se mergea sin actualizar `TASKS.md`.
-- ❌ Se deja el modo `enforce` como default.
+- [ ] Branch with the correct name (`feat/`, `fix/`, `docs/`, etc.).
+- [ ] Commits using Conventional Commits.
+- [ ] PR opened with the full template filled in.
+- [ ] CI (GitHub Actions) passes green.
+- [ ] At least one reviewer assigned (or self-review with the checklist checked).
+- [ ] No `TODO` without an associated issue.
+- [ ] No secrets, `.env`, `.ai/`, or personal data in the diff.
+- [ ] No code commented out "just in case".
+- [ ] No new dependencies without justification in the PR.
 
 ---
 
-## Regla final
+## Anti-criteria (the task is NOT done if...)
 
-**Cuando dudes, pregúntate:** "¿si otro contribuidor clona el repo mañana,
-entiende qué se hizo, por qué, y puede verificarlo?" Si la respuesta es no,
-la tarea no está terminada.
+- ❌ The test "passes" but doesn't actually test what it claims to.
+- ❌ An error is silenced with `try/except: pass`.
+- ❌ `# type: ignore` is added without justification.
+- ❌ Global coverage drops.
+- ❌ Code is commented out without a tracking issue.
+- ❌ `git push --force` is done to `main`.
+- ❌ It is merged without green CI.
+- ❌ It is merged without updating `CHANGELOG.md`.
+- ❌ It is merged without updating `TASKS.md`.
+- ❌ `enforce` mode is left as the default.
+
+---
+
+## Final rule
+
+**When in doubt, ask yourself:** "If another contributor clones the repo
+tomorrow, will they understand what was done, why, and be able to verify
+it?" If the answer is no, the task is not done.
