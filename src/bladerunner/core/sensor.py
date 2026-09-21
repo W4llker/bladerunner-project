@@ -12,5 +12,5 @@ class BaseSensor(abc.ABC):
     name: str = "base_sensor"
 
     @abc.abstractmethod
-    async def stream(self) -> AsyncIterator[Event]:
+    def stream(self) -> AsyncIterator[Event]:
         raise NotImplementedError

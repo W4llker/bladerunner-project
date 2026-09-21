@@ -19,6 +19,11 @@ class RuleBasedDetector(BaseDetector):
     @staticmethod
     def _default_rules() -> list[Rule]:
         return [
+            lambda e: (
+                e.data.get("cpu_percent", 0) > 95,
+                "CPU > 95% (posible descontrol)",
+                Severity.CRITICAL,
+            ),
             lambda e: (e.data.get("cpu_percent", 0) > 90, "CPU > 90%", Severity.MEDIUM),
             lambda e: (e.data.get("connections", 0) > 100, "Más de 100 conexiones", Severity.HIGH),
             lambda e: (
