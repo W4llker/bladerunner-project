@@ -14,6 +14,17 @@ Versionado: [Semantic Versioning](https://semver.org/lang/es/).
 - Demo examples/run_demo.py.
 - CI con GitHub Actions.
 - Documentación completa.
+- Andamiaje agéntico: `TASKS.md`, `DEFINITION_OF_DONE.md`, plantillas de
+  issues y PR, `.pre-commit-config.yaml`, `Makefile`, test e2e y
+  `docs/agent_workflow.md`.
+- Regla CRITICAL en `RuleBasedDetector` (CPU > 95%) para que el modo
+  `enforce` pueda disparar KILL.
+
+### Fixed
+- `BaseSensor.stream()` ya no se declara `async def` (mypy lo tipaba como
+  `Coroutine` en vez de `AsyncIterator`, rompiendo `ruff`/`mypy`).
+- `tests/e2e/test_demo.py` usa `asyncio.create_subprocess_exec` en vez de
+  `subprocess.Popen` (ASYNC220).
 
 ## [0.1.0] — 2024-XX-XX
 

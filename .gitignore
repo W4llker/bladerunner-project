@@ -29,5 +29,16 @@ models/
 .ai/
 AGENTS.local.md
 CLAUDE.local.md
+AGENTIC_DEV_KIT.md
+framework.md
+
 .cursor/local/
 .copilot/
+
+# Pre-commit
+.pre-commit-config.yaml.bak
+
+# Cobertura
+.coverage
+htmlcov/
+coverage.xml

@@ -74,3 +74,9 @@ Sigue docs/plugins.md. Checklist:
 2. Busca issues con `good first issue`.
 3. Abre un issue describiendo la duda.
 4. Ante ambigüedad, elige la opción más conservadora y defensiva.
+
+## Documentación relacionada
+
+| [TASKS.md](TASKS.md) | Backlog vivo — busca siempre "🎯 Tarea actual" |
+| [DEFINITION_OF_DONE.md](DEFINITION_OF_DONE.md) | Cuándo una tarea está terminada |
+| [docs/agent_workflow.md](docs/agent_workflow.md) | Flujo operativo completo del agente |
