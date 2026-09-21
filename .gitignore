@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Entorno
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs y datos
+*.log
+data/
+logs/
+models/
+
+# Instrucciones locales de IA (NO se commitean)
+.ai/
+AGENTS.local.md
+CLAUDE.local.md
+.cursor/local/
+.copilot/

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bladerunner
+spec:
+  selector:
+    app: bladerunner
+  ports:
+    - port: 80
+      targetPort: 8000
+  type: ClusterIP
