@@ -7,7 +7,6 @@ con un timeout corto, y verifica que el agente es terminado.
 from __future__ import annotations
 
 import asyncio
-import subprocess
 import sys
 from pathlib import Path
 
@@ -27,7 +26,7 @@ async def _run_e2e(timeout: float = 20.0) -> bool:
     """Lanza el agente simulado y Bladerunner. Devuelve True si lo mata."""
     assert AGENT_SCRIPT.exists(), f"Falta {AGENT_SCRIPT}"
 
-    proc = subprocess.Popen([sys.executable, str(AGENT_SCRIPT)])
+    proc = await asyncio.create_subprocess_exec(sys.executable, str(AGENT_SCRIPT))
     agent_id = "e2e-agent"
 
     sensor = ProcessSensor(pid=proc.pid, agent_id=agent_id, interval=0.3)
@@ -57,12 +56,12 @@ async def _run_e2e(timeout: float = 20.0) -> bool:
         pass
     finally:
         # Verificar si el proceso sigue vivo
-        still_alive = proc.poll() is None
+        still_alive = proc.returncode is None
         if still_alive:
             proc.terminate()
             try:
-                proc.wait(timeout=3)
-            except subprocess.TimeoutExpired:
+                await asyncio.wait_for(proc.wait(), timeout=3)
+            except asyncio.TimeoutError:
                 proc.kill()
 
     # El test pasa si el proceso fue terminado por Bladerunner
