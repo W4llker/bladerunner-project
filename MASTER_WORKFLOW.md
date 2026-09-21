@@ -91,7 +91,7 @@ src/bladerunner/
 ## 8. Primeros pasos
 
 ```bash
-git clone git@github.com:TU_USUARIO/bladerunner-project.git
+git clone git@github.com:W4llker/bladerunner-project.git
 cd bladerunner-project
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"

@@ -2,8 +2,8 @@
 
 ## Reportar vulnerabilidades
 
-No abras un issue público. Envía email a `security@bladerunner-project.org`
-(placeholder) con: descripción, pasos para reproducir, impacto.
+No abras un issue público. Envía email a `m.baez.c94@gmail.com`
+con: descripción, pasos para reproducir, impacto.
 
 Responderemos en menos de 72 horas.
 

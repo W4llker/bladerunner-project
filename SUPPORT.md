@@ -4,7 +4,7 @@
 
 - Issues de GitHub: bugs, features, dudas técnicas.
 - Discussions: preguntas abiertas, ideas.
-- Email de seguridad: `security@bladerunner-project.org`.
+- Email de seguridad: `m.baez.c94@gmail.com`.
 
 ## Antes de abrir un issue
 

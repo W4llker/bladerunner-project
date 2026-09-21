@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: 🛡️ Reportar vulnerabilidad de seguridad
-    url: https://github.com/TU_USUARIO/bladerunner-project/security/advisories/new
+    url: https://github.com/W4llker/bladerunner-project/security/advisories/new
     about: NO abras un issue público. Ver SECURITY.md.
   - name: 💬 Discusiones
-    url: https://github.com/TU_USUARIO/bladerunner-project/discussions
+    url: https://github.com/W4llker/bladerunner-project/discussions
     about: Preguntas abiertas, ideas, mostrar tu setup.

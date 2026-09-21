@@ -14,7 +14,7 @@
 
 ## Maintainers
 
-- @tu_usuario — fundador
+- @W4llker — fundador
 
 ## Cómo convertirte en maintainer
 

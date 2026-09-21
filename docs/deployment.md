@@ -30,8 +30,8 @@ Manifiestos en `deploy/k8s/`: deployment, service, secret.
 ## Build & push
 
 ```bash
-docker build -t ghcr.io/TU_USUARIO/bladerunner:0.1.0 .
-docker push ghcr.io/TU_USUARIO/bladerunner:0.1.0
+docker build -t ghcr.io/W4llker/bladerunner:0.1.0 .
+docker push ghcr.io/W4llker/bladerunner:0.1.0
 ```
 
 Automatizado en `.github/workflows/release.yml`.

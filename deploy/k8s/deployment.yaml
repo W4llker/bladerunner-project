@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: bladerunner
-          image: ghcr.io/TU_USUARIO/bladerunner:latest
+          image: ghcr.io/W4llker/bladerunner:latest
           ports:
             - containerPort: 8000
           livenessProbe:
