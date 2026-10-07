@@ -31,6 +31,11 @@ Versioning: [Semantic Versioning](https://semver.org/).
 - `README.md`: new "Author and citation" section.
 - SPDX license and copyright headers on all Python source files.
 - `GOVERNANCE.md`: founder listed by full name.
+- ADR-007 (`proposed`): pivot to on-demand hunting, containment and
+  governance of autonomous agents on Kubernetes.
+- Hunt track registered in `TASKS.md` (TASK-011 to TASK-021, blocked until
+  ADR-007 is accepted) and in `docs/roadmap.md`; TASK-002, TASK-003 and
+  TASK-007 flagged as superseded if the ADR is accepted.
 
 ### Fixed
 - `BaseSensor.stream()` is no longer declared `async def` (mypy inferred it
