@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use Bladerunner in your research or work, please cite it as below."
+title: "Bladerunner: an agent hunter to detect, contain and neutralize rogue autonomous agents"
+type: software
+authors:
+  - given-names: Marcelo
+    family-names: Báez Cerda
+    email: m.baez.c94@gmail.com
+repository-code: "https://github.com/W4llker/bladerunner-project"
+abstract: >-
+  Open source framework to detect, contain and neutralize rogue autonomous
+  agents (LLM agents, automation bots, RL agents) by observing their external
+  behavior and applying graduated countermeasures.
+keywords:
+  - ai-safety
+  - cybersecurity
+  - agents
+  - llm
+  - monitoring
+license: Apache-2.0
+version: 0.1.0

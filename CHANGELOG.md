@@ -19,6 +19,16 @@ Versioning: [Semantic Versioning](https://semver.org/).
   `docs/agent_workflow.md`.
 - CRITICAL rule in `RuleBasedDetector` (CPU > 95%) so that `enforce` mode
   can trigger KILL.
+- `NOTICE` file and `CITATION.cff` with author attribution
+  (Marcelo Báez Cerda).
+- Developer Certificate of Origin (DCO) sign-off requirement in
+  `CONTRIBUTING.md`.
+
+### Changed
+- `LICENSE` now contains the full Apache 2.0 text, with copyright
+  "Marcelo Báez Cerda and Bladerunner Contributors".
+- `pyproject.toml`: author and maintainer set to Marcelo Báez Cerda.
+- `README.md`: new "Author and citation" section.
 
 ### Fixed
 - `BaseSensor.stream()` is no longer declared `async def` (mypy inferred it

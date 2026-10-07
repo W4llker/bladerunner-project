@@ -9,7 +9,11 @@ description = "Open source framework to detect, contain and neutralize rogue aut
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
-authors = [{ name = "Bladerunner Contributors" }]
+authors = [
+    { name = "Marcelo Báez Cerda", email = "m.baez.c94@gmail.com" },
+    { name = "Bladerunner Contributors" },
+]
+maintainers = [{ name = "Marcelo Báez Cerda", email = "m.baez.c94@gmail.com" }]
 keywords = ["ai-safety", "cybersecurity", "agents", "llm", "monitoring"]
 dependencies = [
     "fastapi>=0.110",

@@ -126,4 +126,14 @@ Please **do not** open a public issue for security vulnerabilities. See [SECURIT
 
 ## License
 
-Apache 2.0 — see [LICENSE](LICENSE).
+Apache 2.0 — see [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+## Author and citation
+
+Bladerunner was created and is maintained by **Marcelo Báez Cerda**
+([@W4llker](https://github.com/W4llker)).
+
+If you use Bladerunner in research or in a product, please keep the
+[NOTICE](NOTICE) file in your distribution, as required by the Apache 2.0
+license, and cite the project using [CITATION.cff](CITATION.cff) (GitHub's
+"Cite this repository" button).
