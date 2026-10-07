@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Marcelo Báez Cerda and Bladerunner Contributors
+
 """Clase base para actuadores."""
 
 from __future__ import annotations

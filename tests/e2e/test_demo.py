@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Marcelo Báez Cerda and Bladerunner Contributors
+
 """Test end-to-end: verifica que la demo funciona de punta a punta.
 
 Este test lanza el agente simulado, ejecuta Bladerunner en modo enforce

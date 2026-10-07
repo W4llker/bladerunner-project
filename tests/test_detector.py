@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Marcelo Báez Cerda and Bladerunner Contributors
+
 from bladerunner.core.events import Event, EventKind, Severity
 from bladerunner.detectors.rule_based import RuleBasedDetector
 

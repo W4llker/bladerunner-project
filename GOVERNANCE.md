@@ -14,7 +14,7 @@
 
 ## Maintainers
 
-- @W4llker — founder
+- Marcelo Báez Cerda ([@W4llker](https://github.com/W4llker)) — founder and lead maintainer
 
 ## How to become a maintainer
 

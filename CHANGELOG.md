@@ -29,6 +29,8 @@ Versioning: [Semantic Versioning](https://semver.org/).
   "Marcelo Báez Cerda and Bladerunner Contributors".
 - `pyproject.toml`: author and maintainer set to Marcelo Báez Cerda.
 - `README.md`: new "Author and citation" section.
+- SPDX license and copyright headers on all Python source files.
+- `GOVERNANCE.md`: founder listed by full name.
 
 ### Fixed
 - `BaseSensor.stream()` is no longer declared `async def` (mypy inferred it

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Marcelo Báez Cerda and Bladerunner Contributors
+
 """Demo: lanza el agente simulado y Bladerunner lo vigila."""
 
 from __future__ import annotations

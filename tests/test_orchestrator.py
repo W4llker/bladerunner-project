@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Marcelo Báez Cerda and Bladerunner Contributors
+
 import asyncio
 
 from bladerunner.actuators.log_only import LogOnlyActuator
